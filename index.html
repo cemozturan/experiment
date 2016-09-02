@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>Landing Zero Free Bootstrap Theme with Video</title>
@@ -49,10 +49,10 @@
             </div>
         </div>
     </nav>
-    <header id="first">
+    <header ng-controller="MainController as mainCtrl" id="first">
         <div class="header-content">
             <div class="inner">
-                <h1 class="cursive">Simple, One Page Design</h1>
+                <h1 class="cursive">Simple, One Page Design for {{mainCtrl.mainTitle}}</h1>
                 <h4>A free landing page theme with video background</h4>
                 <hr>
                 <a href="#video-background" id="toggleVideo" data-toggle="collapse" class="btn btn-primary btn-xl">Toggle Video</a> &nbsp; <a href="#one" class="btn btn-primary btn-xl page-scroll">Get Started</a>
@@ -404,9 +404,14 @@
     </div>
     <!--scripts loaded here from cdn for performance -->
     <script src="./public/lib/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/angular/angular.min.js"></script>
     <script src="./public/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./node_modules/jquery.easing/jquery.easing.min.js"></script>
     <script src="./public/lib/wow/dist/wow.min.js"></script>
     <script src="./public/js/scripts.js"></script>
+
+    <!-- Own scripts -->
+    <script src="./src/app.js"></script>
+    <script src="./src/main/mainCtrl.js"></script>
   </body>
 </html>
