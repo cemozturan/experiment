@@ -11,7 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.8",
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.1.0",
     "jquery.easing": "^1.4.1",
-    "toastr": "^2.1.2"
+    "toastr": "^2.1.2",
+    "wiredep": "^4.0.0"
   }
 }
