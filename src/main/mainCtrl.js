@@ -11,5 +11,11 @@
     var ctrl = this;
 
     ctrl.mainTitle = "Sebastian Schindler";
+
+    activate();
+
+    function activate(){
+      toastr.info("Activated " + controllerId);
+    }
   }
 })();

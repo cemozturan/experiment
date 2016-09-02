@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.8",
-    "jquery.easing": "^1.4.1"
+    "jquery.easing": "^1.4.1",
+    "toastr": "^2.1.2"
   }
 }
