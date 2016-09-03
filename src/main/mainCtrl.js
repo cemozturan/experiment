@@ -5,9 +5,9 @@
 
   angular
     .module('app')
-    .controller('MainController', [MainController]);
+    .controller('MainController', ['loggerService', MainController]);
 
-  function MainController() {
+  function MainController(loggerService) {
     var ctrl = this;
 
     ctrl.mainTitle = "Sebastian Schindler";
@@ -15,7 +15,8 @@
     activate();
 
     function activate(){
-      toastr.info("Activated " + controllerId);
+        loggerService.log('Activated ' + controllerId);
     }
+
   }
 })();
