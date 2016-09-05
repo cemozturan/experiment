@@ -4,7 +4,8 @@
   angular
     .module('app')
     .constant('config', {
-      showLogs: true
+      showDevLogs: true,
+      videoMutedOnStart: true
     });
 
 })();

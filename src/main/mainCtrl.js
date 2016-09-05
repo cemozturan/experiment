@@ -5,14 +5,14 @@
 
   angular
     .module('app')
-    .controller('MainController', ['loggerService', 'videoService', MainController]);
+    .controller('MainController', ['config', 'loggerService', 'videoService', MainController]);
 
-  function MainController(loggerService, videoService) {
+  function MainController(config, loggerService, videoService) {
     var ctrl = this;
 
     ctrl.videoUrl = '';
     ctrl.showVideo = true;
-    ctrl.videoMuted = false;
+    ctrl.videoMuted = config.videoMutedOnStart;
 
     ctrl.getNextVideo = getNextVideo;
     ctrl.toggleVideo = toggleVideo;

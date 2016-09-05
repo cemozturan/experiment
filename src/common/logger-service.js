@@ -12,7 +12,7 @@
         };
 
         function logDev(text) {
-            if (!config.showLogs){
+            if (!config.showDevLogs){
                 return;
             }
             toastr.info(text);
