@@ -12,26 +12,32 @@
 
     ctrl.videoUrl = '';
     ctrl.showVideo = true;
+    ctrl.videoMuted = false;
 
     ctrl.getNextVideo = getNextVideo;
     ctrl.toggleVideo = toggleVideo;
+    ctrl.toggleVideoSound = toggleVideoSound;
 
     activate();
 
     function activate() {
         getNextVideo();
-        loggerService.log('Activated ' + controllerId);
+        loggerService.logDev('Activated ' + controllerId);
     }
 
     function getNextVideo() {
         ctrl.videoUrl = videoService.getUrlForNextVideo();
         ctrl.showVideo = true;
-        loggerService.log('Video change called');
     }
 
     function toggleVideo() {
       ctrl.showVideo = !ctrl.showVideo;
-      loggerService.log('Toggled video');
+      loggerService.logDev('Toggled video');
+    }
+
+    function toggleVideoSound() {
+      ctrl.videoMuted = !ctrl.videoMuted;
+      loggerService.log(ctrl.videoMuted ? 'Video sound OFF' : 'Video sound ON');
     }
   }
 })();

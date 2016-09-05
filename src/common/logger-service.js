@@ -7,13 +7,18 @@
 
     function loggerService(config) {
         return {
-            log: log
+            log: log,
+            logDev: logDev
         };
 
-        function log(text) {
+        function logDev(text) {
             if (!config.showLogs){
                 return;
             }
+            toastr.info(text);
+        }
+
+        function log(text) {
             toastr.info(text);
         }
     }
