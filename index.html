@@ -59,13 +59,17 @@
     <header ng-controller="MainController as mainCtrl" id="first">
         <div class="header-content">
             <div class="inner">
-                <h1 class="cursive">Simple, One Page Design for {{mainCtrl.mainTitle}}</h1>
+                <h1 class="cursive">Sebastian Schindler</h1>
                 <h4>A free landing page theme with video background</h4>
                 <hr>
-                <a  ng-click="mainCtrl.changeVideo()" id="changeVideo" data-toggle="collapse" class="btn btn-primary btn-xl">Change Video</a> &nbsp; <a href="#video-background" id="toggleVideo" data-toggle="collapse" class="btn btn-primary btn-xl">Toggle Video</a> &nbsp; <a href="#one" class="btn btn-primary btn-xl page-scroll">Get Started</a>
+                <a ng-click="mainCtrl.getNextVideo()" class="btn btn-primary btn-xl">Change Video</a>
+                &nbsp;
+                <a ng-click="mainCtrl.toggleVideo()" class="btn btn-primary btn-xl">Toggle Video</a>
+                &nbsp;
+                <a href="#one" class="btn btn-primary btn-xl page-scroll">Get Started</a>
             </div>
         </div>
-        <video ng-src="{{mainCtrl.videoUrl}}" autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="./public/media/traffic-blurred.jpg" id="video-background">
+        <video ng-show="mainCtrl.showVideo" ng-src="{{mainCtrl.videoUrl}}" autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" id="video-background">
             Your browser does not support the video tag. I suggest you upgrade your browser.
         </video>
     </header>
@@ -328,6 +332,7 @@
     <script src="src/app.js"></script>
     <script src="src/common/logger-service.js"></script>
     <script src="src/gallery/photo-directive.js"></script>
+    <script src="src/video/video-service.js"></script>
     <script src="src/modals/about-modal-directive.js"></script>
     <script src="src/modals/alert-modal-directive.js"></script>
     <script src="src/main/mainCtrl.js"></script>

@@ -5,25 +5,33 @@
 
   angular
     .module('app')
-    .controller('MainController', ['loggerService', MainController]);
+    .controller('MainController', ['loggerService', 'videoService', MainController]);
 
-  function MainController(loggerService) {
+  function MainController(loggerService, videoService) {
     var ctrl = this;
 
-    ctrl.mainTitle = "Sebastian Schindler";
     ctrl.videoUrl = '';
-    ctrl.changeVideo = changeVideo;
+    ctrl.showVideo = true;
+
+    ctrl.getNextVideo = getNextVideo;
+    ctrl.toggleVideo = toggleVideo;
 
     activate();
 
-    function activate(){
+    function activate() {
+        getNextVideo();
         loggerService.log('Activated ' + controllerId);
     }
 
-    function changeVideo(){
+    function getNextVideo() {
+        ctrl.videoUrl = videoService.getUrlForNextVideo();
+        ctrl.showVideo = true;
         loggerService.log('Video change called');
-        ctrl.videoUrl = './public/media/traffic-blurred.mp4';
-        //ctrl.videoUrl = './public/media/cem.mp4';
+    }
+
+    function toggleVideo() {
+      ctrl.showVideo = !ctrl.showVideo;
+      loggerService.log('Toggled video');
     }
   }
 })();
