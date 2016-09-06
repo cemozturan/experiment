@@ -66,11 +66,11 @@
                 &nbsp;
                 <a ng-click="mainCtrl.toggleVideo()" class="btn btn-primary btn-xl">Toggle Video</a>
                 &nbsp;
-                <a ng-click="mainCtrl.toggleVideoSound()" class="btn btn-primary btn-xl">Toggle Video Sound</a>
+                <a ng-click="mainCtrl.toggleVideoSound()" class="btn btn-primary btn-xl">Sesi {{mainCtrl.videoMuted ? 'Aç' : 'Kapa'}}</a>
             </div>
         </div>
         <video ng-show="mainCtrl.showVideo" ng-src="{{mainCtrl.videoUrl}}" mute-video
-            autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" id="video-background">
+            autoplay="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" id="video-background">
             Your browser does not support the video tag. I suggest you upgrade your browser.
         </video>
     </header>
@@ -335,8 +335,8 @@
     <script src="public/js/scripts.js"></script>
     <script src="src/app.js"></script>
     <script src="src/common/logger-service.js"></script>
-    <script src="src/configuration/config.js"></script>
     <script src="src/gallery/photo-directive.js"></script>
+    <script src="src/configuration/config.js"></script>
     <script src="src/main/mainCtrl.js"></script>
     <script src="src/modals/about-modal-directive.js"></script>
     <script src="src/modals/alert-modal-directive.js"></script>
