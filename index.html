@@ -62,11 +62,17 @@
                 <h1 class="cursive">Sebastian Schindler</h1>
                 <h4>A free landing page theme with video background</h4>
                 <hr>
-                <a ng-click="mainCtrl.getNextVideo()" class="btn btn-primary btn-xl">Change Video</a>
+                <a ng-click="mainCtrl.getNextVideo()" class="btn btn-primary btn-xl">
+                    Change Video
+                </a>
                 &nbsp;
-                <a ng-click="mainCtrl.toggleVideo()" class="btn btn-primary btn-xl">Toggle Video</a>
+                <a ng-click="mainCtrl.toggleVideo()" class="btn btn-primary btn-xl">
+                    Toggle Video
+                </a>
                 &nbsp;
-                <a ng-click="mainCtrl.toggleVideoSound()" class="btn btn-primary btn-xl">Sesi {{mainCtrl.videoMuted ? 'Aç' : 'Kapa'}}</a>
+                <a ng-click="mainCtrl.toggleVideoSound()" class="btn btn-primary btn-xl">
+                    Sesi {{mainCtrl.videoMuted ? 'Aç' : 'Kapa'}} <i ng-class="{'ion-volume-high': mainCtrl.videoMuted, 'ion-android-volume-off': !mainCtrl.videoMuted}"></i>
+                </a>
             </div>
         </div>
         <video ng-show="mainCtrl.showVideo" ng-src="{{mainCtrl.videoUrl}}" mute-video

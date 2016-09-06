@@ -32,6 +32,9 @@
 
     function toggleVideo() {
       ctrl.showVideo = !ctrl.showVideo;
+      if (!ctrl.showVideo) {
+          ctrl.videoMuted = true;
+      }
       loggerService.logDev('Toggled video');
     }
 
