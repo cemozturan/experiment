@@ -15,9 +15,9 @@
                     scope.$apply();
                 };
                 scope.$watch('mainCtrl.videoMuted', function(newValue, oldValue) {
-                    element[0].muted = newValue
+                    element[0].muted = newValue;
                 });
             }
-        }
+        };
     }
 })();
