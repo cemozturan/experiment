@@ -35,7 +35,7 @@
       if (!ctrl.showVideo) {
           ctrl.videoMuted = true;
       }
-      loggerService.logDev('Toggled video');
+      loggerService.logDev(ctrl.showVideo ? 'Video shown' : 'Video hidden');
     }
 
     function toggleVideoSound() {
