@@ -8,7 +8,7 @@
   function videoService() {
 
     var currentVideoId = 0;
-    var videoCount = 3;
+    var videoCount = 5;
 
     return {
       getUrlForNextVideo: getUrlForNextVideo
