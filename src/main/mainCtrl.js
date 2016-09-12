@@ -34,6 +34,8 @@
       ctrl.showVideo = !ctrl.showVideo;
       if (!ctrl.showVideo) {
           ctrl.videoMuted = true;
+      } else {
+          ctrl.videoMuted = false;
       }
       loggerService.logDev(ctrl.showVideo ? 'Video shown' : 'Video hidden');
     }
