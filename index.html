@@ -89,6 +89,46 @@
                     <p class="text-faded">
                         Bootstrap's responsive grid comes in 4 sizes or "breakpoints": tiny (xs), small(sm), medium(md) and large(lg). These 4 grid sizes enable you create responsive layouts that behave accordingly on different devices.
                     </p>
+                    <div class="game-container" ng-controller="GameController as gameCtrl">
+            			<form ng-show="!gameCtrl.gameStarted" name="myNumberForm">
+            				<input type="number" required ng-model="gameCtrl.myNumber" ng-keyup="$event.keyCode == 13 && gameCtrl.startGame(gameCtrl.myNumber)"/>
+            				<button type="button" class="btn btn-success" ng-disabled="myNumberForm.$error.required" ng-click="gameCtrl.startGame(gameCtrl.myNumber)">
+            					 BASLA
+            				</button>
+            			</form>
+            			<form ng-show="gameCtrl.gameStarted" name="opponentGuessForm">
+            				<h4>Senin sayin: {{gameCtrl.myNumber}}</h4>
+            				<input type="number" required
+            					ng-model="gameCtrl.opponentGuess"
+            					ng-keyup="($event.keyCode == 13 && gameCtrl.processGuess(gameCtrl.opponentGuess)) || ($event.keyCode == 27 && gameCtrl.clearOpponentGuess())"
+            					/>
+            				<a class="clear" ng-click="gameCtrl.clearOpponentGuess()">
+            				    <span class="glyphicon glyphicon-remove"></span>
+            				</a>
+            				<button type="button" class="btn btn-success" ng-disabled="opponentGuessForm.$error.required" ng-click="gameCtrl.processGuess(gameCtrl.opponentGuess)">
+            					 Neymis?
+            				</button>
+            			</form>
+            			<div>
+            				<span ng-show="gameCtrl.invalidNumberEntered" class="field-validation-error">
+            					Rica ederim gecerli bir sayi girin. 5 haneli olsun, 0 ile baslamasin, ayni rakam birden fazla kullanilmasin.
+            				</span>
+            			</div>
+            			<table ng-show="gameCtrl.opponentGuessData.length > 0" style="width: auto;" class="table table-condensed table-bordered">
+            				<thead>
+            			      <tr>
+            			        <th>Tahmin</th>
+            			        <th>Sonuc</th>
+            			      </tr>
+            			    </thead>
+            			    <tbody>
+            			      <tr ng-repeat="guessData in gameCtrl.opponentGuessData">
+            			        <td>{{guessData.guess}}</td>
+            			        <td>{{guessData.result}}</td>
+            			      </tr>
+            			    </tbody>
+				        </table>
+		            </div>
                     <a href="#resim" class="btn btn-default btn-xl page-scroll">Learn More</a>
                 </div>
             </div>
@@ -338,12 +378,14 @@
     <script src="node_modules/toastr/build/toastr.min.js"></script>
     <!-- Own scripts -->
     <!-- inject:js -->
+    <script src="public/js/responsivevoice.js"></script>
     <script src="public/js/scripts.js"></script>
     <script src="src/app.js"></script>
     <script src="src/common/logger-service.js"></script>
-    <script src="src/gallery/photo-directive.js"></script>
     <script src="src/configuration/config.js"></script>
+    <script src="src/gallery/photo-directive.js"></script>
     <script src="src/main/mainCtrl.js"></script>
+    <script src="src/mastermind/gameCtrl.js"></script>
     <script src="src/modals/about-modal-directive.js"></script>
     <script src="src/modals/alert-modal-directive.js"></script>
     <script src="src/video/mute-video.js"></script>
