@@ -124,7 +124,7 @@
           "Oyun başladı. Sevgiliniz Cemoş size iyi şanslar diler.",
           "İyi olan kazansın, bol şans.",
           "Meşhur sayı oyunu başlamıştır, iyi şanslar.",
-          "Aklınıza kuvvet, haydi göreyim sizi.",
+          "Aklınıza kuvvet, beyin bedava, bedava yaa, haydi göreyim sizi.",
           "Haydi şapşikim benim, ele vermek senin göbek adın.",
           "Oyun başladı. İçimden bir ses kazanacaksınız diyor."
         ];
@@ -154,7 +154,7 @@
           "Ooooof, 0, rakibiniz şahane bir tahmin yaptı, galiba sıçtınız.",
           "Aman tanrım, 0.",
           "Allahım, olamaz böyle bir şey, 0.",
-          "Ooy ooy oy, 0, sıkıntı büyük",
+          "Ooy ooy ooy, 0, sıkıntı büyük",
           "Hahaha, 0, hihohaha",
           "Vay anasını, 0, rakibinizdeki şans sizde olsa çoktan kazanmıştınız.",
           "0 0 0, inanamıyorum yaa."
