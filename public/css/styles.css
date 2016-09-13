@@ -487,3 +487,11 @@ img::-moz-selection {
 .sayi-delete {
   margin-right: 1px;
 }
+
+tr {
+  font-size: x-large;
+}
+
+th {
+  text-align: center;
+}

@@ -87,7 +87,7 @@
                     <h2 class="margin-top-0 text-primary">Meşhur Sayı Oyunu</h2>
                     <br>
                     <p class="text-faded">
-                        Bootstrap's responsive grid comes in 4 sizes or "breakpoints": tiny (xs), small(sm), medium(md) and large(lg). These 4 grid sizes enable you create responsive layouts that behave accordingly on different devices.
+                        Burada meşhur sayı oyunumuzun yeni versiyonunu oynayıp gününe neşe katabilirsin. Yenmelere doyamayıp yeni bir oyuna başlayabilir, ya da istersen oyunu bırakıp resim galerisinde gezebilirsin.
                     </p>
                     <div class="game-container" ng-controller="GameController as gameCtrl">
                 			<form ng-show="!gameCtrl.gameStarted" name="myNumberForm" class="sayi-input-form">
@@ -98,7 +98,7 @@
                 				</button>
                 			</form>
                 			<form ng-show="gameCtrl.gameStarted" name="opponentGuessForm">
-                				<h4 class="sayi-senin">Senin sayın: {{gameCtrl.myNumber}}</h4>
+                				<h4 class="sayi-senin">Senin sayın: <span class="text-primary">{{gameCtrl.myNumber}}</span></h4>
                 				<input type="number" required class="sayi-input"
                 					ng-model="gameCtrl.opponentGuess"
                 					ng-keyup="($event.keyCode == 13 && gameCtrl.processGuess(gameCtrl.opponentGuess))
@@ -113,14 +113,14 @@
                 			</form>
             			    <div class="invalid-number-div">
                 				<span ng-show="gameCtrl.invalidNumberEntered" class="field-validation-error">
-                					Rica ederim gecerli bir sayı girin. 5 haneli olsun, 0 ile başlamasın, ayni rakam birden fazla kullanılmasın.
+                					Rica ederim geçerli bir sayı girin. 5 haneli olsun, 0 ile başlamasın, aynı rakam birden fazla kullanılmasın.
                 				</span>
             			    </div>
-                			<table ng-show="gameCtrl.opponentGuessData.length > 0" style="width: auto;" class="table table-condensed table-bordered">
+                			<table ng-show="gameCtrl.opponentGuessData.length > 0" class="table table-condensed table-bordered">
                 				<thead>
               			      <tr>
-              			        <th>Tahmin</th>
-              			        <th>Sonuc</th>
+              			        <th class="text-primary">Tahmin</th>
+              			        <th class="text-primary">Sonuç</th>
               			      </tr>
               			    </thead>
               			    <tbody>
@@ -130,7 +130,7 @@
               			      </tr>
               			    </tbody>
     				          </table>
-                      <a href="#resim" class="btn btn-default btn-xl page-scroll sayi-oyun-menu-button" title="Resimlere bakicam">Resimler</a>
+                      <a href="#resim" class="btn btn-default btn-xl page-scroll sayi-oyun-menu-button" title="Resimlere bakıcam">Resimler</a>
                       <a ng-click="gameCtrl.reset()" class="btn btn-default btn-xl sayi-oyun-menu-button" title="">
                           Yeni Oyun
                       </a>
