@@ -457,3 +457,33 @@ img::-moz-selection {
     color: #fff;
     background: 0
 }
+
+.sayi-senin {
+  font-size: xx-large;
+}
+
+.sayi-input {
+  color: black;
+  margin-right: 1%;
+  font-size: x-large;
+}
+
+.sayi-oyun-menu-button {
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.field-validation-error {
+  color: red;
+  font-size: large;
+}
+
+.invalid-number-div {
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.sayi-delete {
+  margin-right: 1px;
+}

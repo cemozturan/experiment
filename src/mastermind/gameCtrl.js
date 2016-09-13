@@ -59,19 +59,27 @@
             } else	if (correctLocation > 0 && wrongLocation > 0) {
                 result = '+' + correctLocation + ', -' + wrongLocation;
             } else if (correctLocation > 0) {
-                result = '+' + correctLocation
+                result = '+' + correctLocation;
             } else if (wrongLocation > 0) {
                 result = '-' + wrongLocation;
             }
             return result;
-        };
+        }
 
         function isNumberValid (value){
             return (value && value > 10000 && value < 99999 && !/(.).*\1/.test(value));
-        };
+        }
 
         ctrl.clearOpponentGuess = function() {
             ctrl.opponentGuess = "";
-        }
-    };
+        };
+
+        ctrl.reset = function() {
+          ctrl.gameStarted = false;
+          ctrl.myNumber = "";
+          ctrl.opponentGuessData = [];
+          ctrl.opponentGuess = "";
+          ctrl.invalidNumberEntered = false;
+        };
+    }
 })();

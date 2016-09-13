@@ -33,10 +33,10 @@
             <div class="navbar-collapse collapse" id="bs-navbar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a class="page-scroll" href="#one">Oyun</a>
+                        <a class="page-scroll" href="#oyun">Oyun</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#oyun">Highlights</a>
+                        <a class="page-scroll" href="#highlights">Highlights</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#resim">GALERİ</a>
@@ -80,61 +80,66 @@
             Your browser does not support the video tag. I suggest you upgrade your browser.
         </video>
     </header>
-    <section class="bg-primary" id="one">
+    <section class="bg-primary" id="oyun">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
-                    <h2 class="margin-top-0 text-primary">Built On The Bootstrap Grid</h2>
+                    <h2 class="margin-top-0 text-primary">Meşhur Sayı Oyunu</h2>
                     <br>
                     <p class="text-faded">
                         Bootstrap's responsive grid comes in 4 sizes or "breakpoints": tiny (xs), small(sm), medium(md) and large(lg). These 4 grid sizes enable you create responsive layouts that behave accordingly on different devices.
                     </p>
                     <div class="game-container" ng-controller="GameController as gameCtrl">
-            			<form ng-show="!gameCtrl.gameStarted" name="myNumberForm">
-            				<input type="number" required ng-model="gameCtrl.myNumber" ng-keyup="$event.keyCode == 13 && gameCtrl.startGame(gameCtrl.myNumber)"/>
-            				<button type="button" class="btn btn-success" ng-disabled="myNumberForm.$error.required" ng-click="gameCtrl.startGame(gameCtrl.myNumber)">
-            					 BASLA
-            				</button>
-            			</form>
-            			<form ng-show="gameCtrl.gameStarted" name="opponentGuessForm">
-            				<h4>Senin sayin: {{gameCtrl.myNumber}}</h4>
-            				<input type="number" required
-            					ng-model="gameCtrl.opponentGuess"
-            					ng-keyup="($event.keyCode == 13 && gameCtrl.processGuess(gameCtrl.opponentGuess)) || ($event.keyCode == 27 && gameCtrl.clearOpponentGuess())"
-            					/>
-            				<a class="clear" ng-click="gameCtrl.clearOpponentGuess()">
-            				    <span class="glyphicon glyphicon-remove"></span>
-            				</a>
-            				<button type="button" class="btn btn-success" ng-disabled="opponentGuessForm.$error.required" ng-click="gameCtrl.processGuess(gameCtrl.opponentGuess)">
-            					 Neymis?
-            				</button>
-            			</form>
-            			<div>
-            				<span ng-show="gameCtrl.invalidNumberEntered" class="field-validation-error">
-            					Rica ederim gecerli bir sayi girin. 5 haneli olsun, 0 ile baslamasin, ayni rakam birden fazla kullanilmasin.
-            				</span>
-            			</div>
-            			<table ng-show="gameCtrl.opponentGuessData.length > 0" style="width: auto;" class="table table-condensed table-bordered">
-            				<thead>
-            			      <tr>
-            			        <th>Tahmin</th>
-            			        <th>Sonuc</th>
-            			      </tr>
-            			    </thead>
-            			    <tbody>
-            			      <tr ng-repeat="guessData in gameCtrl.opponentGuessData">
-            			        <td>{{guessData.guess}}</td>
-            			        <td>{{guessData.result}}</td>
-            			      </tr>
-            			    </tbody>
-				        </table>
-		            </div>
-                    <a href="#resim" class="btn btn-default btn-xl page-scroll">Learn More</a>
+                			<form ng-show="!gameCtrl.gameStarted" name="myNumberForm" class="sayi-input-form">
+                				<input type="number" required class="sayi-input" ng-model="gameCtrl.myNumber"
+                        ng-keyup="$event.keyCode == 13 && gameCtrl.startGame(gameCtrl.myNumber)"/>
+                				<button type="button" class="btn btn-success btn-xl" ng-disabled="myNumberForm.$error.required" ng-click="gameCtrl.startGame(gameCtrl.myNumber)">
+                					 Başla
+                				</button>
+                			</form>
+                			<form ng-show="gameCtrl.gameStarted" name="opponentGuessForm">
+                				<h4 class="sayi-senin">Senin sayın: {{gameCtrl.myNumber}}</h4>
+                				<input type="number" required class="sayi-input"
+                					ng-model="gameCtrl.opponentGuess"
+                					ng-keyup="($event.keyCode == 13 && gameCtrl.processGuess(gameCtrl.opponentGuess))
+                          || ($event.keyCode == 27 && gameCtrl.clearOpponentGuess())"
+                					/>
+                				<a class="clear sayi-delete" ng-click="gameCtrl.clearOpponentGuess()">
+                				    <span class="glyphicon glyphicon-remove"></span>
+                				</a>
+                				<button type="button" class="btn btn-success btn-xl" ng-disabled="opponentGuessForm.$error.required" ng-click="gameCtrl.processGuess(gameCtrl.opponentGuess)">
+                					 Neymiş?
+                				</button>
+                			</form>
+            			    <div class="invalid-number-div">
+                				<span ng-show="gameCtrl.invalidNumberEntered" class="field-validation-error">
+                					Rica ederim gecerli bir sayı girin. 5 haneli olsun, 0 ile başlamasın, ayni rakam birden fazla kullanılmasın.
+                				</span>
+            			    </div>
+                			<table ng-show="gameCtrl.opponentGuessData.length > 0" style="width: auto;" class="table table-condensed table-bordered">
+                				<thead>
+              			      <tr>
+              			        <th>Tahmin</th>
+              			        <th>Sonuc</th>
+              			      </tr>
+              			    </thead>
+              			    <tbody>
+              			      <tr ng-repeat="guessData in gameCtrl.opponentGuessData">
+              			        <td>{{guessData.guess}}</td>
+              			        <td>{{guessData.result}}</td>
+              			      </tr>
+              			    </tbody>
+    				          </table>
+                      <a href="#resim" class="btn btn-default btn-xl page-scroll sayi-oyun-menu-button" title="Resimlere bakicam">Resimler</a>
+                      <a ng-click="gameCtrl.reset()" class="btn btn-default btn-xl sayi-oyun-menu-button" title="">
+                          Yeni Oyun
+                      </a>
+		                </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="oyun">
+    <section id="highlights">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
