@@ -11,7 +11,6 @@
     var ctrl = this;
 
     ctrl.videoUrl = '';
-    ctrl.showVideo = true;
     ctrl.videoMuted = config.videoMutedOnStart;
 
     ctrl.getNextVideo = getNextVideo;
@@ -22,6 +21,7 @@
 
     function activate() {
         getNextVideo();
+        ctrl.showVideo = false;
         loggerService.logDev('Activated ' + controllerId);
     }
 
