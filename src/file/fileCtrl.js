@@ -10,11 +10,21 @@
   function FileController(loggerService, FileSaver, Blob) {
     var ctrl = this;
 
-    ctrl.text = 'HELLO BEBYBI';
+    ctrl.userNote = '';
+    ctrl.defaultFileName = 'not.txt';
 
     ctrl.download = function(text) {
+      if (!text) {
+        loggerService.logWarning('UYARI: Kaydedilecek bir not yazmadınız!');
+        return;
+      }
       var data = new Blob([text], { type: 'text/plain;charset=utf-8' });
-      FileSaver.saveAs(data, 'text.txt');
+      var fileName = ctrl.fileName ? ctrl.fileName + '.txt' : ctrl.defaultFileName;
+      FileSaver.saveAs(data, fileName);
+      if (!ctrl.fileName) {
+        loggerService.logWarning('Dosya adı "' + ctrl.defaultFileName + '" olarak ayarlandı.');
+      }
+      loggerService.logSuccess('Not yeni bir dosyaya kaydedildi.');
     };
   }
 })();

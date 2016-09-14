@@ -8,7 +8,9 @@
     function loggerService(config) {
         return {
             log: log,
-            logDev: logDev
+            logDev: logDev,
+            logWarning: logWarning,
+            logSuccess: logSuccess
         };
 
         function logDev(text) {
@@ -20,6 +22,14 @@
 
         function log(text) {
             toastr.info(text);
+        }
+
+        function logWarning(text) {
+            toastr.warning(text);
+        }
+
+        function logSuccess(text) {
+            toastr.success(text);
         }
     }
 })();
