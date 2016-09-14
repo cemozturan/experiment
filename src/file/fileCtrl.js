@@ -5,12 +5,17 @@
 
   angular
     .module('app')
-    .controller('FileController', ['loggerService', FileController]);
+    .controller('FileController', ['loggerService', 'FileSaver', 'Blob', FileController]);
 
-  function FileController(loggerService) {
+  function FileController(loggerService, FileSaver, Blob) {
     var ctrl = this;
 
     ctrl.text = 'HELLO BEBYBI';
+
+    ctrl.download = function(text) {
+      var data = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      FileSaver.saveAs(data, 'text.txt');
+    };
   }
 })();
 

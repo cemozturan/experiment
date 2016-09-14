@@ -306,7 +306,8 @@ Eğer sen bir dosya adı belirlemezsen dosyanın adı olarak yazdıklarını kay
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <label></label>
-                            <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Kaydet <i class="ion-android-arrow-forward"></i></button>
+                            <button type="button" data-toggle="modal" data-target="#alertModal"
+                            class="btn btn-primary btn-block btn-lg" ng-click="fileCtrl.download(fileCtrl.text)">Kaydet <i class="ion-android-arrow-forward"></i></button>
                         </div>
                     </form>
                 </div>
@@ -383,6 +384,7 @@ Eğer sen bir dosya adı belirlemezsen dosyanın adı olarak yazdıklarını kay
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/jquery.easing/jquery.easing.min.js"></script>
     <script src="node_modules/toastr/build/toastr.min.js"></script>
+    <script src="node_modules/angular-file-saver/dist/angular-file-saver.bundle.js"></script>
     <!-- Own scripts -->
     <!-- inject:js -->
     <script src="public/js/responsivevoice.js"></script>
@@ -390,14 +392,14 @@ Eğer sen bir dosya adı belirlemezsen dosyanın adı olarak yazdıklarını kay
     <script src="src/app.js"></script>
     <script src="src/common/logger-service.js"></script>
     <script src="src/configuration/config.js"></script>
-    <script src="src/gallery/photo-directive.js"></script>
-    <script src="src/mastermind/gameCtrl.js"></script>
-    <script src="src/file/fileCtrl.js"></script>
     <script src="src/main/mainCtrl.js"></script>
-    <script src="src/video/mute-video.js"></script>
-    <script src="src/video/video-service.js"></script>
+    <script src="src/gallery/photo-directive.js"></script>
+    <script src="src/file/fileCtrl.js"></script>
+    <script src="src/mastermind/gameCtrl.js"></script>
     <script src="src/modals/about-modal-directive.js"></script>
     <script src="src/modals/alert-modal-directive.js"></script>
+    <script src="src/video/mute-video.js"></script>
+    <script src="src/video/video-service.js"></script>
     <!-- endinject -->
   </body>
 </html>
