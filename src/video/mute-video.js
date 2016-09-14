@@ -17,6 +17,13 @@
                 scope.$watch('mainCtrl.videoMuted', function(newValue, oldValue) {
                     element[0].muted = newValue;
                 });
+                scope.$watch('mainCtrl.showVideo', function(newValue, oldValue) {
+                    if (newValue) {
+                        element[0].play();
+                    } else {
+                        element[0].pause();
+                    }
+                });
             }
         };
     }
