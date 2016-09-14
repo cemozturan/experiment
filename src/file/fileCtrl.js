@@ -21,7 +21,9 @@
       if (ctrl.title) {
         text = ctrl.title.toUpperCase() + '\r\n\r\n\r\n' + text;
       }
-
+      if (ctrl.keywords) {
+        text = text + '\r\n\r\n\r\nKeywords: ' + ctrl.keywords;
+      }
       var data = new Blob([text], { type: 'text/plain;charset=utf-8' });
       var fileName = ctrl.fileName ? ctrl.fileName + '.txt' : ctrl.defaultFileName;
       FileSaver.saveAs(data, fileName);
