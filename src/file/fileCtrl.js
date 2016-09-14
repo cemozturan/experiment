@@ -33,6 +33,7 @@
         loggerService.logWarning('Dosya adı "' + ctrl.defaultFileName + '" olarak ayarlandı.');
       }
       loggerService.logSuccess('Notunuz yeni bir dosyaya kaydedildi.', 'Not Defteri');
+      reset();
     };
 
     function applyNewLineHack(text) {
@@ -46,6 +47,13 @@
         }
       }
       return result;
+    }
+
+    function reset() {
+        ctrl.title = '';
+        ctrl.keywords = '';
+        ctrl.fileName = '';
+        ctrl.userNote = '';
     }
   }
 })();
