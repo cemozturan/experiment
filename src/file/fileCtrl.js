@@ -18,6 +18,7 @@
         loggerService.logWarning('Kaydedilecek bir not yazmadınız!', 'UYARI');
         return;
       }
+      text = applyNewLineHack(text);
       if (ctrl.title) {
         text = '***       ' + ctrl.title.toUpperCase() + '       ***\r\n\r\n\r\n' + text;
       }
@@ -33,6 +34,19 @@
       }
       loggerService.logSuccess('Notunuz yeni bir dosyaya kaydedildi.', 'Not Defteri');
     };
+
+    function applyNewLineHack(text) {
+      var result = "";
+      // Simple text editors like notepad expects a carriage return and a line feed (CRLF) to properly display a line break.
+      for (var i = 0; i < text.length; i++) {
+        if (text[i] == "\n") {
+          result += "\r\n";
+        } else {
+          result += text[i];
+        }
+      }
+      return result;
+    }
   }
 })();
 
