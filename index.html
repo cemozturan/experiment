@@ -63,11 +63,11 @@
                 <h4>Sayfa bu, bi seyler bi seyler eklenecek</h4>
                 <hr>
                 <a ng-show="mainCtrl.showVideo" ng-click="mainCtrl.getNextVideo()" class="btn btn-primary btn-xl">
-                    Change Video
+                    Videoyu Değiştir
                 </a>
                 &nbsp;
                 <a ng-click="mainCtrl.toggleVideo()" class="btn btn-primary btn-xl">
-                    Toggle Video
+                    {{mainCtrl.showVideo ? 'Videoyu Durdur' : 'Video Oynat' }}
                 </a>
                 &nbsp;
                 <a ng-click="mainCtrl.toggleVideoSound()" class="btn btn-primary btn-xl">
