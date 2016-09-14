@@ -276,13 +276,13 @@
             </div>
         </div>
     </aside>
-    <section id="last">
+    <section id="last" ng-controller="FileController as fileCtrl">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="margin-top-0 wow fadeIn text-primary">Not Defteri</h2>
                     <hr class="primary">
-                    <p>Burada bir şeyler not edip bilgisayarında bir dosyaya kaydedebilirsin.</p>
+                    <p>Burada bir şeyler not edip bilgisayarında bir dosyaya kaydedebilirsin. {{fileCtrl.text}}</p>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <form class="contact-form row">
@@ -391,12 +391,13 @@ Eğer sen bir dosya adı belirlemezsen dosyanın adı olarak yazdıklarını kay
     <script src="src/common/logger-service.js"></script>
     <script src="src/configuration/config.js"></script>
     <script src="src/gallery/photo-directive.js"></script>
-    <script src="src/main/mainCtrl.js"></script>
     <script src="src/mastermind/gameCtrl.js"></script>
-    <script src="src/modals/about-modal-directive.js"></script>
-    <script src="src/modals/alert-modal-directive.js"></script>
+    <script src="src/file/fileCtrl.js"></script>
+    <script src="src/main/mainCtrl.js"></script>
     <script src="src/video/mute-video.js"></script>
     <script src="src/video/video-service.js"></script>
+    <script src="src/modals/about-modal-directive.js"></script>
+    <script src="src/modals/alert-modal-directive.js"></script>
     <!-- endinject -->
   </body>
 </html>

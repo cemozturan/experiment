@@ -42,7 +42,7 @@
 
     function toggleVideoSound() {
       ctrl.videoMuted = !ctrl.videoMuted;
-      loggerService.log(ctrl.videoMuted ? 'Video sound OFF' : 'Video sound ON');
+      loggerService.log(ctrl.videoMuted ? 'Video sesi KAPALI' : 'Video sesi AÇIK');
     }
   }
 })();
