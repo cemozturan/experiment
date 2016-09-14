@@ -19,10 +19,10 @@
         return;
       }
       if (ctrl.title) {
-        text = ctrl.title.toUpperCase() + '\r\n\r\n\r\n' + text;
+        text = '***       ' + ctrl.title.toUpperCase() + '       ***\r\n\r\n\r\n' + text;
       }
       if (ctrl.keywords) {
-        text = text + '\r\n\r\n\r\nKeywords: ' + ctrl.keywords;
+        text = text + '\r\n\r\n\r\n*Keywords: ' + ctrl.keywords;
       }
       text = text + '\r\n\r\nKaydedilme tarihi: ' + moment().format('LLLL');
       var data = new Blob([text], { type: 'text/plain;charset=utf-8' });
