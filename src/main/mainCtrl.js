@@ -26,8 +26,8 @@
     }
 
     function getNextVideo() {
-        ctrl.videoUrl = videoService.getUrlForNextVideo();
-        ctrl.showVideo = true;
+      ctrl.videoUrl = videoService.getUrlForNextVideo();
+      ctrl.showVideo = true;
     }
 
     function toggleVideo() {
