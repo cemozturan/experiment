@@ -15,7 +15,7 @@
 
     ctrl.download = function(text) {
       if (!text) {
-        loggerService.logWarning('UYARI: Kaydedilecek bir not yazmadınız!');
+        loggerService.logWarning('Kaydedilecek bir not yazmadınız!', 'UYARI');
         return;
       }
       if (ctrl.title) {
@@ -28,7 +28,7 @@
       if (!ctrl.fileName) {
         loggerService.logWarning('Dosya adı "' + ctrl.defaultFileName + '" olarak ayarlandı.');
       }
-      loggerService.logSuccess('Not yeni bir dosyaya kaydedildi.');
+      loggerService.logSuccess('Notunuz yeni bir dosyaya kaydedildi.', 'Not Defteri');
     };
   }
 })();

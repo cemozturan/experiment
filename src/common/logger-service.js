@@ -24,12 +24,12 @@
             toastr.info(text);
         }
 
-        function logWarning(text) {
-            toastr.warning(text);
+        function logWarning(text, title) {
+            toastr.warning(text, title);
         }
 
-        function logSuccess(text) {
-            toastr.success(text);
+        function logSuccess(text, title) {
+            toastr.success(text, title);
         }
     }
 })();
