@@ -288,7 +288,7 @@
                     <form class="contact-form row">
                         <div class="col-md-4">
                             <label></label>
-                            <input type="text" class="form-control" ng-model="fileCtrl.fileName" placeholder="Dosya adı (max. 20 karakter)">
+                            <input type="text" class="form-control" ng-model="fileCtrl.fileName" placeholder="Dosya adı">
                         </div>
                         <div class="col-md-4">
                             <label></label>
@@ -296,13 +296,13 @@
                         </div>
                         <div class="col-md-4">
                             <label></label>
-                            <input type="text" class="form-control" placeholder="Başlık">
+                            <input type="text" class="form-control" ng-model="fileCtrl.title" placeholder="Başlık">
                         </div>
                         <div class="col-md-12">
                             <label></label>
                             <textarea class="form-control" rows="9" ng-model="fileCtrl.userNote" placeholder="Not buraya yazılacak...
 
-Eğer sen bir dosya adı belirlemezsen yazdıkların '{{fileCtrl.defaultFileName}}' olarak kaydedilecek.
+Eğer sen bir dosya adı belirlemezsen yazdıkların '{{fileCtrl.defaultFileName}}' adlı bir dosyaya olarak kaydedilecek. Eğer '{{fileCtrl.defaultFileName}}' zaten varsa sonuna '(1)' gibi bir sayı eklenip yenisi yaratılacak.
 
 Dosya adında kullanılmasına izin verilmeyen karakterler (?, *, vs.) otomatik olarak '-' ile değiştirilecek."></textarea>
                         </div>
