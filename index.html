@@ -69,7 +69,7 @@
                     {{mainCtrl.showVideo ? 'Videoyu Durdur' : 'Video Oynat' }}
                 </a>
                 &nbsp;
-                <a ng-click="mainCtrl.toggleVideoSound()" class="btn btn-primary btn-xl">
+                <a ng-show="mainCtrl.showVideo" ng-click="mainCtrl.toggleVideoSound()" class="btn btn-primary btn-xl">
                     Sesi {{mainCtrl.videoMuted ? 'Aç' : 'Kapa'}} <i ng-class="{'ion-volume-high': mainCtrl.videoMuted, 'ion-android-volume-off': !mainCtrl.videoMuted}"></i>
                 </a>
             </div>
@@ -351,16 +351,16 @@ Dosya adında kullanılmasına izin verilmeyen karakterler (?, *, vs.) otomatik 
                     </form>
                 </div>
                 <div class="col-xs-12 col-sm-3 text-right">
-                    <h4>Follow</h4>
+                    <h4>Sık kullanınanlar</h4>
                     <ul class="list-inline">
-                      <li><a rel="nofollow" href="" title="Twitter"><i class="icon-lg ion-social-twitter-outline"></i></a>&nbsp;</li>
-                      <li><a rel="nofollow" href="" title="Facebook"><i class="icon-lg ion-social-facebook-outline"></i></a>&nbsp;</li>
-                      <li><a rel="nofollow" href="" title="Dribble"><i class="icon-lg ion-social-dribbble-outline"></i></a></li>
+                      <li><a rel="nofollow" href="http://www.google.co.uk" target="ext" title="Google"><i class="icon-lg ion-social-google-outline"></i></a>&nbsp;&nbsp;</li>
+                      <li><a rel="nofollow" href="http://www.facebook.com" target="ext" title="Facebook"><i class="icon-lg ion-social-facebook-outline"></i></a>&nbsp;&nbsp;</li>
+                      <li><a rel="nofollow" href="http://www.youtube.com" target="ext" title="YouTube"><i class="icon-lg ion-social-youtube"></i></a></li>
                     </ul>
                 </div>
             </div>
             <br/>
-            <span class="pull-right text-muted small"><a href="http://www.bootstrapzero.com">Landing Zero by BootstrapZero</a> ©2015 Company</span>
+            <span class="pull-right text-muted small"><a href="http://gfsivri.azurewebsites.net">A Present by Cem Ozturan</a> ©10/2016</span>
         </div>
     </footer>
     <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
