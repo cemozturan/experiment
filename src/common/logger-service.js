@@ -20,8 +20,8 @@
             toastr.info(text);
         }
 
-        function log(text) {
-            toastr.info(text);
+        function log(text, title) {
+            toastr.info(text, title);
         }
 
         function logWarning(text, title) {

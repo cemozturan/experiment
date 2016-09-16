@@ -23,6 +23,7 @@
         getNextVideo();
         ctrl.showVideo = false;
         loggerService.logDev('Activated ' + controllerId);
+        loggerService.log('Cemoş iyi eğlenceler diler.', 'HOŞGELDİNİZ');
     }
 
     function getNextVideo() {
