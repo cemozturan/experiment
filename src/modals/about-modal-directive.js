@@ -18,9 +18,10 @@
                     		    'Sayfanın küçük bir özetini buraya ekledim, neler var, ne tavsiye ederim, vs...' +
                     		'</h5>' +
                     		'<p class="text-justify">' +
-                    		    'This is a single-page Bootstrap template with a sleek dark/grey color scheme, accent color and smooth scrolling.' +
-                    		    'There are vertical content sections with subtle animations that are activated when scrolled into view using the jQuery WOW plugin. There is also a gallery with modals' +
-                    		    'that work nicely to showcase your work portfolio. Other features include a contact form, email subscribe form, multi-column footer. Uses Questrial Google Font and Ionicons.' +
+                    		    'The birthday letter will go here.' +
+                        		'This should, in theory, look good even if there are ' +
+                            	'multiple lines of text. ' +
+                                'The whole page looks better when in full screen mode (press F11).' +
                     		'</p>' +
                     		'<p class="text-center"><a href="http://gfsivri.azurewebsites.net/" target="ext">İnternetteki versiyonu aç</a></p>' +
                     		'<br/>' +
